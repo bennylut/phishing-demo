@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
     <title> The big wall </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
-        td,th: {
-            padding: 28px;
-        }
-
-        [alert] {
-        	color: red;
-        }
+         body {{
+            padding-top: 60px;
+         }}
     </style>
-
+                    
     <script type="text/javascript">
     	function youbeenhacked(form) {
     		document.getElementById("fake").innerHTML = "<h1 alert> you been hacked: I know your name: '" + form.uname.value + "' and your password: '" + form.password.value + "' </h1>";
@@ -22,17 +23,31 @@
 
 <body>
 	<div id="fake">
-		<h1> This is a secure service - login to enter </h1><br>
+		 <div class="jumbotron">
+            <h1> The Big Wall </h1>
+            <p> This is a secure service! Please login to enter  </p>
+        </div>
 
-		<p> <b> Error! WRONG LOGIN, please try again </b> </p>
+        <div class="alert alert-danger" role="alert">
+          Error! WRONG LOGIN, please try again
+        </div>
 
+        <br>
 		<form action="#" onsubmit="return youbeenhacked(this);">
-          User Name:<br>
-          <input type="text" name="uname"><br><br>
-          Password:<br>
-          <input type="text" name="password"><br><br>
+          <div class="form-group">
+            <label for="uname">User Name</label>
+            <input type="text" class="form-control" name="uname" >
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="text" class="form-control" name="password" >
+          </div>
+
           <input type="hidden" name="method" value="login">
-          <input type="submit" value="Submit">
+
+          <input type="submit" class="btn btn-primary" value="Submit">
+
         </form>
     </div>
 </body>
