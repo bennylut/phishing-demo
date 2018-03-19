@@ -6,17 +6,22 @@
         td,th: {
             padding: 28px;
         }
+
+        [alert] {
+        	color: red;
+        }
     </style>
 
     <script type="text/javascript">
     	function youbeenhacked(form) {
-    		window.alert("you been hacked: I know your name: '" + form.uname.value + "' and your password: '" + form.password.value + "'");
+    		document.getElementById("fake").innerHTML = "<h1 alert> you been hacked: I know your name: '" + form.uname.value + "' and your password: '" + form.password.value + "' </h1>";
     	}
 
     </script>
 </head>
 
 <body>
+	<div id="fake">
 		<h1> This is a secure service - login to enter </h1><br>
 
 		<p> <b> Error! WRONG LOGIN, please try again </b> </p>
@@ -29,5 +34,6 @@
           <input type="hidden" name="method" value="login">
           <input type="submit" value="Submit">
         </form>
+    </div>
 </body>
 </html>
